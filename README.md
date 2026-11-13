@@ -157,14 +157,19 @@ SearchPage result = search.afts("cm:name:'*.pdf'", 0, 50);
 ## Запускаемый пример
 
 Отдельное приложение-потребитель находится в
-[`examples/quickstart`](examples/quickstart). Оно использует зависимость
-`pro.abgrid:alfresco-community-spring-services:1.0.0` в том виде, в
-котором она будет публиковаться, и демонстрирует загрузку, скачивание,
-работу с метаданными, типизированный поиск и централизованную обработку
-ошибок ACS через высокоуровневый `AlfrescoClient`.
+[`examples/quickstart`](examples/quickstart). Оно использует опубликованную
+зависимость `pro.abgrid:alfresco-community-spring-services:1.0.0` и
+демонстрирует загрузку, скачивание, работу с метаданными, типизированный
+поиск и централизованную обработку ошибок ACS через высокоуровневый
+`AlfrescoClient`.
 
-Пока библиотека не опубликована, выполните `mvn clean install` в корне
-репозитория, а затем `mvn spring-boot:run` внутри `examples/quickstart`.
+Перед запуском настройте параметры подключения к серверу Alfresco в
+конфигурации приложения. Затем перейдите в каталог
+`examples/quickstart` и выполните:
+
+``` bash
+mvn spring-boot:run
+```
 
 ## Сборка и артефакты релиза
 
@@ -715,14 +720,18 @@ that every source/target format is available.
 ## Runnable example
 
 A separate consumer application is available in
-[`examples/quickstart`](examples/quickstart). It uses the
-published-style `pro.abgrid:alfresco-community-spring-services:1.0.0`
-dependency and demonstrates upload, download, metadata, typed search and
-centralized ACS error handling through the high-level `AlfrescoClient`.
+[`examples/quickstart`](examples/quickstart). It uses the published
+`pro.abgrid:alfresco-community-spring-services:1.0.0` dependency and
+demonstrates upload, download, metadata, typed search and centralized ACS
+error handling through the high-level `AlfrescoClient`.
 
-Until the library is published, run `mvn clean install` in the
-repository root and then `mvn spring-boot:run` inside
-`examples/quickstart`.
+Before running the example, configure the Alfresco server connection
+settings in the application configuration. Then change to the
+`examples/quickstart` directory and run:
+
+``` bash
+mvn spring-boot:run
+```
 
 ## Build and release artifacts
 
