@@ -82,7 +82,7 @@ services:
       service: alfresco
 
   transform-core-aio:
-    image: alfresco/alfresco-transform-core-aio:5.4.3
+    image: alfresco/alfresco-transform-core-aio:5.4.5
     mem_limit: 768m
     restart: unless-stopped
     environment:
@@ -100,7 +100,7 @@ services:
         condition: service_started
 
   share:
-    image: docker.io/alfresco/alfresco-share:26.2.0
+    image: docker.io/alfresco/alfresco-share:26.2.4
     mem_limit: 768m
     restart: unless-stopped
     environment:
@@ -195,11 +195,9 @@ services:
       timeout: 2s
       retries: 5
       start_period: 30s
-    volumes:
-      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
 
   batch-indexing:
-    image: docker.io/alfresco/alfresco-elasticsearch-batch-indexing:5.7.0
+    image: docker.io/alfresco/alfresco-elasticsearch-batch-indexing:5.9.0
     mem_limit: 512m
     restart: unless-stopped
     depends_on:
@@ -224,17 +222,17 @@ services:
       ALFRESCO_REINDEX_CONTINUOUS_OVERLAP: 10m
 
   activemq:
-    image: docker.io/alfresco/alfresco-activemq:6.2.6-jre17-rockylinux8
+    image: docker.io/alfresco/alfresco-activemq:6.2.9-jre17-rockylinux8
     mem_limit: 1g
     restart: unless-stopped
     environment:
       ACTIVEMQ_ADMIN_LOGIN: admin
       ACTIVEMQ_ADMIN_PASSWORD: admin
     ports:
-      - "8161:8161"
-      - "5672:5672"
-      - "61616:61616"
-      - "61613:61613"
+      - "8161:8161" # Web Console
+      - "5672:5672" # AMQP
+      - "61616:61616" # OpenWire
+      - "61613:61613" # STOMP
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8161/admin/"]
       interval: 30s

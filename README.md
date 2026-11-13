@@ -30,11 +30,11 @@ Spring Boot 4.1 / Java 21, построенный поверх сгенерир�
   --------------------------------------------------------------------------------------------
   Компонент                Проверенный образ / версия
   ------------------------ -------------------------------------------------------------------
-  `alfresco`               `docker.io/alfresco/alfresco-content-repository-community:26.2.0`
+  `alfresco`               `docker.io/alfresco/alfresco-content-repository-community:26.2.4`
 
-  `transform-core-aio`     `alfresco/alfresco-transform-core-aio:5.4.3`
+  `transform-core-aio`     `alfresco/alfresco-transform-core-aio:5.4.5`
 
-  `share`                  `docker.io/alfresco/alfresco-share:26.2.0`
+  `share`                  `docker.io/alfresco/alfresco-share:26.2.4`
 
   `postgres`               `postgres:17.9`
 
@@ -42,9 +42,9 @@ Spring Boot 4.1 / Java 21, построенный поверх сгенерир�
 
   `kibana`                 `kibana:8.17.10`
 
-  `batch-indexing`         `docker.io/alfresco/alfresco-elasticsearch-batch-indexing:5.7.0`
+  `batch-indexing`         `docker.io/alfresco/alfresco-elasticsearch-batch-indexing:5.9.0`
 
-  `activemq`               `docker.io/alfresco/alfresco-activemq:6.2.6-jre17-rockylinux8`
+  `activemq`               `docker.io/alfresco/alfresco-activemq:6.2.9-jre17-rockylinux8`
 
   `content-app`            `alfresco/alfresco-content-app:8.0.0`
 
@@ -594,11 +594,11 @@ versions**, not mandatory transitive dependencies of this library.
   --------------------------------------------------------------------------------------------
   Component                Verified image / version
   ------------------------ -------------------------------------------------------------------
-  `alfresco`               `docker.io/alfresco/alfresco-content-repository-community:26.2.0`
+  `alfresco`               `docker.io/alfresco/alfresco-content-repository-community:26.2.4`
 
-  `transform-core-aio`     `alfresco/alfresco-transform-core-aio:5.4.3`
+  `transform-core-aio`     `alfresco/alfresco-transform-core-aio:5.4.5`
 
-  `share`                  `docker.io/alfresco/alfresco-share:26.2.0`
+  `share`                  `docker.io/alfresco/alfresco-share:26.2.4`
 
   `postgres`               `postgres:17.9`
 
@@ -606,9 +606,9 @@ versions**, not mandatory transitive dependencies of this library.
 
   `kibana`                 `kibana:8.17.10`
 
-  `batch-indexing`         `docker.io/alfresco/alfresco-elasticsearch-batch-indexing:5.7.0`
+  `batch-indexing`         `docker.io/alfresco/alfresco-elasticsearch-batch-indexing:5.9.0`
 
-  `activemq`               `docker.io/alfresco/alfresco-activemq:6.2.6-jre17-rockylinux8`
+  `activemq`               `docker.io/alfresco/alfresco-activemq:6.2.9-jre17-rockylinux8`
 
   `content-app`            `alfresco/alfresco-content-app:8.0.0`
 

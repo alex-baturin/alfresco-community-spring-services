@@ -157,13 +157,36 @@ public class AlfrescoProperties {
 
     public void setDiagnostics(Diagnostics diagnostics) { this.diagnostics = diagnostics == null ? new Diagnostics() : diagnostics; }
 
-    /** @return RU: настройки HTTP-транспорта. EN: HTTP transport settings. */
+    /**
+     * <p><strong>RU:</strong> Возвращает настройки HTTP-транспорта.</p>
+     * <p><strong>EN:</strong> Returns HTTP transport settings.</p>
+     *
+     * @return RU: настройки HTTP-транспорта. EN: HTTP transport settings.
+     */
     public Http getHttp() { return http; }
-    /** @param http RU: настройки HTTP-транспорта. EN: HTTP transport settings. */
+
+    /**
+     * <p><strong>RU:</strong> Устанавливает настройки HTTP-транспорта; при {@code null} используются значения по умолчанию.</p>
+     * <p><strong>EN:</strong> Sets HTTP transport settings; defaults are used when {@code null} is supplied.</p>
+     *
+     * @param http RU: новые настройки HTTP-транспорта. EN: new HTTP transport settings.
+     */
     public void setHttp(Http http) { this.http = http == null ? new Http() : http; }
-    /** @return RU: настройки health indicator. EN: health indicator settings. */
+
+    /**
+     * <p><strong>RU:</strong> Возвращает настройки проверки доступности Alfresco.</p>
+     * <p><strong>EN:</strong> Returns Alfresco health indicator settings.</p>
+     *
+     * @return RU: настройки health indicator. EN: health indicator settings.
+     */
     public Health getHealth() { return health; }
-    /** @param health RU: настройки health indicator. EN: health indicator settings. */
+
+    /**
+     * <p><strong>RU:</strong> Устанавливает настройки проверки доступности Alfresco; при {@code null} используются значения по умолчанию.</p>
+     * <p><strong>EN:</strong> Sets Alfresco health indicator settings; defaults are used when {@code null} is supplied.</p>
+     *
+     * @param health RU: новые настройки health indicator. EN: new health indicator settings.
+     */
     public void setHealth(Health health) { this.health = health == null ? new Health() : health; }
 
     /**
@@ -177,21 +200,54 @@ public class AlfrescoProperties {
 
         /** RU: Создаёт HTTP-настройки по умолчанию. EN: Creates default HTTP settings. */
         public Http() {}
-        /** @return RU: таймаут установления соединения. EN: connection establishment timeout. */
+        /**
+         * <p><strong>RU:</strong> Возвращает таймаут установления HTTP-соединения.</p>
+         * <p><strong>EN:</strong> Returns the HTTP connection establishment timeout.</p>
+         *
+         * @return RU: таймаут установления соединения. EN: connection establishment timeout.
+         */
         public Duration getConnectTimeout() { return connectTimeout; }
-        /** @param connectTimeout RU: таймаут установления соединения. EN: connection establishment timeout. */
+
+        /**
+         * <p><strong>RU:</strong> Устанавливает таймаут установления HTTP-соединения.</p>
+         * <p><strong>EN:</strong> Sets the HTTP connection establishment timeout.</p>
+         *
+         * @param connectTimeout RU: новый таймаут установления соединения. EN: new connection establishment timeout.
+         */
         public void setConnectTimeout(Duration connectTimeout) {
             this.connectTimeout = positive(connectTimeout, Duration.ofSeconds(5), "connect-timeout");
         }
-        /** @return RU: таймаут чтения ответа. EN: response read timeout. */
+        /**
+         * <p><strong>RU:</strong> Возвращает таймаут ожидания ответа HTTP для обычных запросов.</p>
+         * <p><strong>EN:</strong> Returns the HTTP response timeout for regular requests.</p>
+         *
+         * @return RU: таймаут чтения ответа. EN: response read timeout.
+         */
         public Duration getReadTimeout() { return readTimeout; }
-        /** @param readTimeout RU: таймаут чтения ответа. EN: response read timeout. */
+
+        /**
+         * <p><strong>RU:</strong> Устанавливает таймаут ожидания ответа HTTP для обычных запросов.</p>
+         * <p><strong>EN:</strong> Sets the HTTP response timeout for regular requests.</p>
+         *
+         * @param readTimeout RU: новый таймаут чтения ответа. EN: new response read timeout.
+         */
         public void setReadTimeout(Duration readTimeout) {
             this.readTimeout = positive(readTimeout, Duration.ofSeconds(30), "read-timeout");
         }
-        /** @return RU: увеличенный таймаут потоковых upload/download операций. EN: extended timeout for streaming upload/download operations. */
+        /**
+         * <p><strong>RU:</strong> Возвращает увеличенный таймаут потоковых upload/download операций.</p>
+         * <p><strong>EN:</strong> Returns the extended timeout for streaming upload/download operations.</p>
+         *
+         * @return RU: увеличенный таймаут потоковых операций. EN: extended streaming operation timeout.
+         */
         public Duration getStreamingReadTimeout() { return streamingReadTimeout; }
-        /** @param streamingReadTimeout RU: таймаут потоковых операций. EN: streaming operation timeout. */
+
+        /**
+         * <p><strong>RU:</strong> Устанавливает увеличенный таймаут потоковых upload/download операций.</p>
+         * <p><strong>EN:</strong> Sets the extended timeout for streaming upload/download operations.</p>
+         *
+         * @param streamingReadTimeout RU: новый таймаут потоковых операций. EN: new streaming operation timeout.
+         */
         public void setStreamingReadTimeout(Duration streamingReadTimeout) {
             this.streamingReadTimeout = positive(streamingReadTimeout, Duration.ofMinutes(10), "streaming-read-timeout");
         }
@@ -212,9 +268,20 @@ public class AlfrescoProperties {
         private boolean enabled = true;
         /** RU: Создаёт health-настройки по умолчанию. EN: Creates default health settings. */
         public Health() {}
-        /** @return RU: включена ли регистрация health indicator. EN: whether health indicator registration is enabled. */
+        /**
+         * <p><strong>RU:</strong> Проверяет, включена ли регистрация health indicator.</p>
+         * <p><strong>EN:</strong> Indicates whether health indicator registration is enabled.</p>
+         *
+         * @return RU: {@code true}, если health indicator включён. EN: {@code true} if the health indicator is enabled.
+         */
         public boolean isEnabled() { return enabled; }
-        /** @param enabled RU: включить или выключить health indicator. EN: enable or disable the health indicator. */
+
+        /**
+         * <p><strong>RU:</strong> Включает или выключает регистрацию health indicator.</p>
+         * <p><strong>EN:</strong> Enables or disables health indicator registration.</p>
+         *
+         * @param enabled RU: {@code true}, чтобы включить проверку. EN: {@code true} to enable the health check.
+         */
         public void setEnabled(boolean enabled) { this.enabled = enabled; }
     }
 

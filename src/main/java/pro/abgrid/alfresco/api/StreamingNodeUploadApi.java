@@ -14,6 +14,9 @@ import org.springframework.web.service.annotation.PostExchange;
 public interface StreamingNodeUploadApi {
 
     /**
+     * <p><strong>RU:</strong> Загружает содержимое в дочерний узел, передавая multipart-части потоково.</p>
+     * <p><strong>EN:</strong> Uploads content to a child node using streaming multipart parts.</p>
+     *
      * @param nodeId RU: идентификатор родительского узла. EN: parent node identifier.
      * @param autoRename RU: автоматически разрешать конфликт имени. EN: automatically resolve name conflicts.
      * @param majorVersion RU: создать major-версию. EN: create a major version.
